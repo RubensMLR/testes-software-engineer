@@ -10,13 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class EnderecoController {
-    /*
-    @GetMapping(path = "/v1/consulta-endereco")
-    public String ConsultaEndereco_v1() {
-        return "consulta-endereco-v1";
-    }
-    */
-    /*
+    /*  Contrato:
         POST v1/consulta-endereco
         REQUEST
         {
@@ -34,8 +28,8 @@ public class EnderecoController {
         }
      */
     @PostMapping(path = "/v1/consulta-endereco")
-    public String ConsultaEndereco_v1(@RequestBody String body){
-        String error = "{ 'message': 'O cep informado não está no formato correto {0-9}{8}. EX: 29165827'}";
+    public static String ConsultaEndereco_v1(@RequestBody String body){
+        String error = "{\"message\": \"O cep informado não está no formato correto {0-9}{8}. EX: 29165827\"}";
         String reqCep = "";
         Endereco response = new Endereco();
         GetEnderecoByCep getEnderecoByCep = new GetEnderecoByCep();
@@ -47,7 +41,7 @@ public class EnderecoController {
                 response = getEnderecoByCep.GetDadosCep(reqCep);
                 return response.toString();
             } else{
-                return error.replace('\'', '\"');
+                return error;
             }
 
         } catch (JSONException ex){
