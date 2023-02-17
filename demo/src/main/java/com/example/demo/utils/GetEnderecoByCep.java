@@ -1,7 +1,6 @@
-package com.example.demo;
+package com.example.demo.utils;
 
 import com.example.demo.models.Endereco;
-import com.example.demo.utils.ClienteHttp;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
 
 import java.net.http.HttpRequest;

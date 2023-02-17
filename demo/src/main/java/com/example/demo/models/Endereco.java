@@ -68,17 +68,18 @@ public class Endereco {
         this.frete = frete;
     }
 
+    /*
     @Override
     public String toString() {
-        String jsonString = "{ " +
-                "'cep':'" + cep + '\'' +
-                ", 'rua':'" + rua + '\'' +
-                ", 'complemento':'" + complemento + '\'' +
-                ", 'bairro':'" + bairro + '\'' +
-                ", 'cidade':'" + cidade + '\'' +
-                ", 'estado':'" + estado + '\'' +
-                ", 'frete':" + frete +
-                '}';
-        return  jsonString.replace('\'','\"');
+        String jsonString = String.format("{\"cep\":\"%s\", " +
+                                           "\"rua\":\"%s\", " +
+                                           "\"complemento\":\"%s\", " +
+                                           "\"bairro\":\"%s\", " +
+                                           "\"cidade\":\"%s\", " +
+                                           "\"estado\":\"%s\", " +
+                                           "\"frete\":%.2f}", cep, rua, complemento, bairro, cidade, estado, frete);
+        return  jsonString;
     }
+
+     */
 }

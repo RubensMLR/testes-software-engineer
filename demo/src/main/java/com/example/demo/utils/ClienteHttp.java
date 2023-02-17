@@ -15,7 +15,7 @@ public class ClienteHttp {
         return HttpRequest.newBuilder()
                 .uri(new URI(url))
                 .GET()
-                .header("Content-Type", "application/json")
+                //.header("Content-Type", "application/json")
                 .build();
     }
 
